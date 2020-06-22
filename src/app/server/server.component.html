@@ -5,3 +5,7 @@
 <p [hidden]="allowNewServer">the button is disabled</p>
 <p [hidden]="!allowNewServer">the button can now be used</p>
 <h3>{{ serverCreationStatus }}</h3>
+<hr>
+<label>Server Name Input</label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<p>{{ serverName }}</p>
