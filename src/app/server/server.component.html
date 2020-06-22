@@ -1,5 +1,5 @@
 <p>This is the server component</p>
-<p>The server with ID: <strong>{{ serverId }}</strong> is currently in state: <strong>{{ getServerStatus() }}</strong></p>
+<p [ngStyle]="{color: getColor()}">The server with ID: <strong>{{ serverId }}</strong> is currently in state: <strong>{{ getServerStatus() }}</strong></p>
 <hr>
 
 <label>Server Name</label>
