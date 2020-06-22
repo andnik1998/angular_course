@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-server',
     templateUrl: './server.component.html',
+    styleUrls: ['./server.component.css'],
 })
 export class ServerComponent {
     serverId = 116;
@@ -11,6 +12,7 @@ export class ServerComponent {
     serverCreationStatus = "No server was created!";
     serverName = '';
     serverCreated= false;
+    servers = ['YoungFinio'];
 
     constructor() {
         this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
@@ -21,6 +23,7 @@ export class ServerComponent {
     onCreateServer() {
         this.serverCreated = true;
         this.serverCreationStatus = "Server was created! Name: " + this.serverName;
+        this.servers.push(this.serverName);
     }
     getServerStatus(){
         return this.serverStatus;
