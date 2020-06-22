@@ -1,7 +1,7 @@
 <p>This is the server component</p>
 <p>The server with ID: <strong>{{ serverId }}</strong> is currently in state: <strong>{{ getServerStatus() }}</strong></p>
 <hr>
-<p>still in the server component</p>
-<button class="btn btn-primary" [disabled]="!allowNewServer">Click me</button>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Click me</button>
 <p [hidden]="allowNewServer">the button is disabled</p>
 <p [hidden]="!allowNewServer">the button can now be used</p>
+<h3>{{ serverCreationStatus }}</h3>
