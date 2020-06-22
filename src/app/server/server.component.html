@@ -2,13 +2,12 @@
 <p>The server with ID: <strong>{{ serverId }}</strong> is currently in state: <strong>{{ getServerStatus() }}</strong></p>
 <hr>
 
-<h3>{{ serverCreationStatus }}</h3>
-<hr>
 <label>Server Name</label>
 <input type="text" class="form-control" [(ngModel)]="serverName">
-<!-- <p>{{ serverName }}</p> -->
 <br>
-<!-- <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Create Server</button> -->
 <button class="btn btn-primary" [disabled]="serverName === ''" (click)="onCreateServer()">Create Server</button>
-<p [hidden]="allowNewServer">the button is disabled</p>
-<p [hidden]="!allowNewServer">the button can now be used</p>
+<hr>
+<p *ngIf="serverCreated; else noServer">{{ serverCreationStatus }}</p>
+<ng-template #noServer>
+    <p>No server was created</p>
+</ng-template>
