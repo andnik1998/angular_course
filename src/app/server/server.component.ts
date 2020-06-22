@@ -13,7 +13,10 @@ export class ServerComponent {
     serverCreated= false;
 
     constructor() {
-        setTimeout(() => {this.allowNewServer=true}, 2000);
+        this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+        var round = Math.round;
+        var randnum = Math.random() * 1000;
+        this.serverId = round(randnum);
     }
     onCreateServer() {
         this.serverCreated = true;
